@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>react-web-pull-to-refresh string example</title>
+    <link href="/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="p2rfix">
+        <div id="root"></div>
+    </div>
+    <script src="/build/shared.js"></script>
+    <script src="/build/icon.bundle.js"></script>
+    <script>
+    /* Avoid `pull to refresh` of Android Chrome */
+    /* Original Code: http://qiita.com/zeriyoshi/items/d73d6712400d75dc8bea */
+    if(window.navigator.userAgent.toLowerCase().indexOf('chrome') != -1){
+        var bodyStyle, p2rfixStyle;
+        document.getElementsByTagName('html')[0].style.height='100%';
+        bodyStyle = document.getElementsByTagName('body')[0].style;
+        bodyStyle.height = '100%';
+        bodyStyle.overflowY = 'hidden';
+        p2rfixStyle = document.getElementById('p2rfix').style;
+        p2rfixStyle.height = '100%';
+        p2rfixStyle.overflow = 'auto';
+    }
+    </script>
+</body>
+</html>

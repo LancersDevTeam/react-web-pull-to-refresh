@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PullDownToRefresh renders correctly 1`] = `
+<PullDownToRefresh
+  backgroundColor="#f2f2f2"
+  borderHeight={0}
+  className=""
+  color="black"
+  displayFlag={true}
+  fontSize="20px"
+  height={50}
+  loadingContent="Loading..."
+  margin="0px"
+  padding="0px"
+  pullDownHandler={[Function]}
+  threshold={10}
+  throttleTermMS={80}
+>
+  <div
+    className=""
+  >
+    <div
+      className="loading_base not_loading"
+    >
+      Loading...
+    </div>
+    <div>
+      <ul>
+        <li>
+          0
+        </li>
+        <li>
+          1
+        </li>
+        <li>
+          2
+        </li>
+        <li>
+          3
+        </li>
+        <li>
+          4
+        </li>
+        <li>
+          5
+        </li>
+        <li>
+          6
+        </li>
+        <li>
+          7
+        </li>
+        <li>
+          8
+        </li>
+        <li>
+          9
+        </li>
+      </ul>
+    </div>
+  </div>
+</PullDownToRefresh>
+`;
