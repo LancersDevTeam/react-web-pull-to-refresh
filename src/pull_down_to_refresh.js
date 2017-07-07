@@ -139,11 +139,9 @@ class PullDownToRefresh extends PureComponent {
 
     start(event: any): void {
         if (!document.body || !this.contentAreaRef) {
-            console.log('!document.body || !this.contentAreaRef @ start');
             return;
         }
         if (document.body.scrollTop >= this.contentAreaRef.getBoundingClientRect().top) {
-            console.log('document.body.scrollTop >= this.contentAreaRef.getBoundingClientRect().top @ start');
             return;
         }
         this.setState({ draggingFlag: true });
@@ -173,7 +171,6 @@ class PullDownToRefresh extends PureComponent {
         }
         const workingMargin = this.props.borderHeight + (this.props.height - dragDistance);
         if (workingMargin <= this.props.threshold) {
-            console.log('workingMargin <= this.props.threshold @ move');
             this.setState({ thresholdReachedFlag: true });
         }
     }
@@ -206,6 +203,7 @@ class PullDownToRefresh extends PureComponent {
             return "loading_base not_loading"
         }
     }
+
     render() {
         return (
             <div className={this.props.className} ref={node => this.selfRef = node}>
