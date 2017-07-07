@@ -1,6 +1,6 @@
 {
   "name": "react-web-pull-to-refresh",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A pull-to-refresh React component",
   "main": "./lib/pull_down_to_refresh.js",
   "repository": "https://github.com/LancersDevTeam/react-web-pull-to-refresh/",
