@@ -1,7 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react';
 import throttle from 'lodash.throttle';
-require('./pull_down_to_refresh.css');
+import LoadingArea from './loading_area';
 
 class PullUpToRefresh extends PureComponent {
 
@@ -31,7 +31,6 @@ class PullUpToRefresh extends PureComponent {
     };
 
     selfRef: any;
-    loadingAreaRef: any;
     contentAreaRef: any;
     updateStart: Function;
     updateEnd: Function;
@@ -73,7 +72,6 @@ class PullUpToRefresh extends PureComponent {
             { leading: true, trailing: true }
         );
         this.addListeners();
-        this.setStyles();
     }
 
     componentWillUnmount() {
@@ -105,17 +103,6 @@ class PullUpToRefresh extends PureComponent {
         this.selfRef.removeEventListener('mouseup', this.stop.bind(this), { passive: true });
         this.contentAreaRef.removeEventListener('touchstart', this.start.bind(this), { passive: true });
         this.contentAreaRef.removeEventListener('mousedown', this.start.bind(this), { passive: true });
-    }
-
-    setStyles() {
-        this.loadingAreaRef.style.height = `${this.props.height}px`;
-        this.loadingAreaRef.style.border = `${this.props.borderHeight}px solid #000`;
-        this.loadingAreaRef.style.lineHeight = `${this.props.height}px`;
-        this.loadingAreaRef.style.fontSize = this.props.fontSize;
-        this.loadingAreaRef.style.backgroundColor = this.props.backgroundColor;
-        this.loadingAreaRef.style.color = this.props.color;
-        this.loadingAreaRef.style.padding = this.props.padding;
-        this.loadingAreaRef.style.margin = this.props.margin;
     }
 
     updateStart(): void {
@@ -201,23 +188,13 @@ class PullUpToRefresh extends PureComponent {
         this.setState({ thresholdReachedFlag: false });
     }
 
-    getClassName(): string {
-        if (this.props.displayFlag && this.state.updatingFlag) {
-            return "loading_base loading";
-        } else {
-            return "loading_base not_loading"
-        }
-    }
-
     render() {
         return (
             <div className={this.props.className} ref={node => this.selfRef = node}>
                 <div ref={node => this.contentAreaRef = node}>
                     {this.props.children}
                 </div>
-                <div ref={node => this.loadingAreaRef = node} className={this.getClassName()}>
-                    {this.props.displayFlag && this.props.loadingContent}
-                </div>
+                <LoadingArea updatingFlag={this.state.updatingFlag} {...this.props} />
             </div>
         );
     }
