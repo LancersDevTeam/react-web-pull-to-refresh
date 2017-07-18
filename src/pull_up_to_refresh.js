@@ -195,10 +195,8 @@ class PullUpToRefresh extends PureComponent {
 
         if (this.state.thresholdReachedFlag) {
             this.updateStart();
-            this.setState({ draggingFlag: false });
-            this.setState({ thresholdReachedFlag: false });
-            return;
         }
+
         this.setState({ draggingFlag: false });
         this.setState({ thresholdReachedFlag: false });
     }
