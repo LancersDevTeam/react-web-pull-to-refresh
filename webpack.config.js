@@ -35,11 +35,11 @@ module.exports = {
             },
         ],
     },
-    entry: [path.resolve(__dirname, 'src/pull_down_to_refresh.js')],
+    entry: [path.resolve(__dirname, 'src/index.js')],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'lib'),
-        filename: 'pull_down_to_refresh.js',
+        filename: 'index.js',
         library: 'react-web-pull-down-to-refresh',
         libraryTarget: 'umd',
         umdNamedDefine: true
