@@ -1,6 +1,8 @@
 // @flow
 import React, { Component } from 'react';
-import PullDownToRefresh from '../../src/pull_down_to_refresh';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import CircularProgress from 'material-ui/CircularProgress';
+import PullDownToRefresh from '../../../src/pull_down_to_refresh';
 
 class App extends Component {
 
@@ -33,16 +35,18 @@ class App extends Component {
         const pullDownProps = {
             displayFlag: this.state.displayFlag,
             pullDownHandler: this.pullDownHandler.bind(this),
-            loadingContent: 'Loading...',
+            loadingContent: <CircularProgress />,
         }
         const list = [];
-        for (let i = 0; i < 200; i++) {
+        for (let i = 1; i < 200; i++) {
             list.push(<li key={i}>{i}</li>);
         }
         return (
-            <PullDownToRefresh {...pullDownProps}>
-                <ul>{list}</ul>
-            </PullDownToRefresh>
+            <MuiThemeProvider>
+                <PullDownToRefresh {...pullDownProps}>
+                    <ul>{list}</ul>
+                </PullDownToRefresh>
+            </MuiThemeProvider>
         );
     }
 }

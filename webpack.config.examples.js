@@ -34,8 +34,8 @@ module.exports = {
         ],
     },
     entry: {
-        'string': './examples/string/index.js',
-        'icon': './examples/icon/index.js',
+        'string': './examples/pull_down_to_refresh/string/index.js',
+        'icon': './examples/pull_down_to_refresh/icon/index.js',
     },
     output: {
         path: __dirname + '/build',
