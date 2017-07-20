@@ -19,11 +19,28 @@ exports[`PullDownToRefresh renders correctly 1`] = `
   <div
     className=""
   >
-    <div
-      className="loading_base not_loading"
+    <LoadingArea
+      backgroundColor="#f2f2f2"
+      borderHeight={0}
+      className=""
+      color="black"
+      displayFlag={true}
+      fontSize="20px"
+      height={50}
+      loadingContent="Loading..."
+      margin="0px"
+      padding="0px"
+      pullDownHandler={[Function]}
+      threshold={10}
+      throttleTermMS={80}
+      updatingFlag={false}
     >
-      Loading...
-    </div>
+      <div
+        className="loading_base not_loading"
+      >
+        Loading...
+      </div>
+    </LoadingArea>
     <div>
       <ul>
         <li>

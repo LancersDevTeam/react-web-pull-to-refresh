@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { shallowToJson,  mountToJson} from 'enzyme-to-json';
+import { mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
 import PullDownToRefresh from '../src/pull_down_to_refresh';
 import renderer from 'react-test-renderer';
 
-describe('PullDownToRefresh', ()=>{
-    test('renders correctly', ()=>{
+describe('PullDownToRefresh', () => {
+    test('renders correctly', () => {
         const pullDownProps = {
             displayFlag: true,
             pullDownHandler: () => {},
